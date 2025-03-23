@@ -31,17 +31,25 @@ const MovieCast = () => {
     getFilmCast();
   }, [movieParamsData.movieId]);
 
-  return castData && castData.cast ? (
-    <ul>
-      {castData.cast.map((element) => (
-        <li key={element.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w200/${element.profile_path}`}
-            alt="film-poster"
-          />
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
-          <p>{element.name}</p>
-          <p>Character: {element.character}</p>
+  if (error) {
+    return <p>Error loading cast data.</p>;
+  }
+
+  return castData && castData.cast ? (
+    <ul className={style.castList}>
+      {castData.cast.map((element) => (
+        <li key={element.id} className={style.castItem}>
+          <img
+            className={style.castImage}
+            src={`https://image.tmdb.org/t/p/w200/${element.profile_path}`}
+            alt={element.name}
+          />
+          <p className={style.castName}>{element.name}</p>
+          <p className={style.castCharacter}>Character: {element.character}</p>
         </li>
       ))}
     </ul>

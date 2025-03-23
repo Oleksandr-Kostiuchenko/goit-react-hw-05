@@ -1,4 +1,6 @@
 .movieList {
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -6,7 +8,22 @@
 
 .movieWrapper {
   padding: 15px;
-  background-color: #fff;
+  background-color: #b9b2b2;
   color: black;
   border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movieWrapper h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.movieWrapper p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.5;
 }

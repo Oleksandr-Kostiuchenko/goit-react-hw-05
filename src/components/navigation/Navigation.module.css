@@ -1,5 +1,25 @@
+.headerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 50px;
+}
+
+.pageTitle {
+  color: #b8fa4d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.pageLogo {
+  width: 30px;
+  height: 30px;
+}
+
 .navWrapper {
-  margin-bottom: 30px;
 }
 
 .navList {
@@ -7,7 +27,20 @@
   gap: 15px;
 }
 
-.activeLink {
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
   padding-bottom: 5px;
-  border-bottom: 1px solid white;
+  border-bottom: 2px solid transparent;
+  border-radius: 1px;
+
+  transition: color 250ms linear, border-color 250ms linear;
+}
+
+.activeLink {
+  color: #b8fa4d;
+  border-color: #b8fa4d;
 }

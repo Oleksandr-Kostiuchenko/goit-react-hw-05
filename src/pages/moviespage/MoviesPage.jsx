@@ -5,6 +5,10 @@ import { fetchFilmByName } from "../../fetchFilms";
 import MovieList from "../../components/movielist/MovieList";
 import { useDebounce } from "use-debounce";
 
+import { motion } from "framer-motion";
+import { CiSearch } from "react-icons/ci";
+import ErrorMessage from "../../components/errormessage/ErrorMessage";
+
 const MoviesPage = () => {
   //* Params controlling
   const [searchParams, setSearchParams] = useSearchParams();
@@ -49,16 +53,37 @@ const MoviesPage = () => {
 
   return (
     <>
-      <div>
+      <motion.div
+        className={style.inputWrapper}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         <input
+          autoComplete="off"
+          placeholder="Type to search..."
+          className={style.filmInput}
           value={userQuery}
           onChange={(e) => updateParams(e.target.value)}
           type="text"
           name="userFilm"
         />
-      </div>
+        <CiSearch className={style.searchIcon} />
+      </motion.div>
 
-      {filmData && filmData.length > 0 && <MovieList data={filmData} />}
+      {filmData && filmData.length > 0 && (
+        <motion.div
+          className={style.headerWrapper}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <MovieList data={filmData} />
+        </motion.div>
+      )}
+      {error && <ErrorMessage />}
     </>
   );
 };

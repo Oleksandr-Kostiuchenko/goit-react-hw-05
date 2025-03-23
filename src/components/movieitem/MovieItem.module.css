@@ -1,5 +1,21 @@
 .filwWrapper {
-  padding: 15px;
-  border: 1px solid white;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
   border-radius: 8px;
+
+  background-color: #050609;
+}
+
+.filmImage {
+  border-radius: 8px;
+}
+
+.filmDescription {
+  font-size: 15px;
+  color: #6c6d72;
+}
+
+.filledStar {
+  fill: yellow;
 }

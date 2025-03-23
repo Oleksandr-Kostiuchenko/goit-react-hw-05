@@ -6,6 +6,16 @@
 
 .movieItem {
   width: 150px;
-  height: 230px;
-  overflow: hidden;
+  height: 300px;
+  overflow: auto;
+
+  transition: transform 250ms linear;
+}
+
+.movieItem::-webkit-scrollbar {
+  display: none;
+}
+
+.movieItem:hover {
+  transform: scale(1.05);
 }

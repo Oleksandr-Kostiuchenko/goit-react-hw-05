@@ -3,6 +3,8 @@ import { fetchFilmReviews } from "../../fetchFilms";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import { RxAvatar } from "react-icons/rx";
+
 const MovieReviews = () => {
   const movieParamsData = useParams();
 
@@ -31,14 +33,24 @@ const MovieReviews = () => {
     getFilmReviews();
   }, [movieParamsData.movieId]);
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error loading reviews.</p>;
+  }
+
   return reviewsData &&
     reviewsData.results &&
     reviewsData.results.length > 0 ? (
     <ul className={style.movieList}>
       {reviewsData.results.map((element) => (
         <li className={style.movieWrapper} key={element.id}>
-          <h3>{element.author}</h3>
-
+          <h3>
+            <RxAvatar />
+            {element.author}
+          </h3>
           <p>{element.content}</p>
         </li>
       ))}

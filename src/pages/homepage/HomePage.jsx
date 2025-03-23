@@ -1,4 +1,5 @@
 import style from "./HomePage.module.css";
+import { motion } from "framer-motion";
 
 //* Router
 import { useEffect, useState } from "react";
@@ -6,6 +7,8 @@ import { fetchTrendingFilms } from "../../fetchFilms";
 
 //* Components
 import MovieList from "../../components/movielist/MovieList";
+import Loader from "../../components/loader/Loader";
+import ErrorMessage from "../../components/errormessage/ErrorMessage";
 
 const HomePage = () => {
   const [trendingFilmsData, setTrendingFilmsData] = useState("");
@@ -36,10 +39,19 @@ const HomePage = () => {
 
   return (
     <>
-      <h1 className={style.pageTitle}>
-        Discover What’s Trending in Cinema Today!
-      </h1>
-      {trendingFilmsData.length > 0 && <MovieList data={trendingFilmsData} />}
+      {isLoading && <Loader />}
+      {trendingFilmsData.length > 0 && (
+        <motion.div
+          className={style.headerWrapper}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <MovieList data={trendingFilmsData} />
+        </motion.div>
+      )}
+      {error && <ErrorMessage />}
     </>
   );
 };
