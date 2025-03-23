@@ -1,0 +1,122 @@
+/* ================= RESET & BASE ================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-style: normal;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: none;
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  /* background-color: #ffffff; */
+  /* background-color: #cee5e7; */
+  /* box-shadow: inset 0px 0px 300px -56px rgba(104, 197, 204, 1); */
+
+  background-color: #1c1d20;
+  color: #fafafa;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 375px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    /* padding-left: 196px; */
+    /* padding-right: 196px; */
+  }
+}
+
+input {
+  display: block;
+}
+
+/* ================= /RESET & BASE ================= */

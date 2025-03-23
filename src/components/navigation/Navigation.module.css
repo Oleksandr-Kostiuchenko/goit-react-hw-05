@@ -1,0 +1,13 @@
+.navWrapper {
+  margin-bottom: 30px;
+}
+
+.navList {
+  display: flex;
+  gap: 15px;
+}
+
+.activeLink {
+  padding-bottom: 5px;
+  border-bottom: 1px solid white;
+}
