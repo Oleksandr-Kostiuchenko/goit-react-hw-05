@@ -1,0 +1,11 @@
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.movieItem {
+  width: 150px;
+  height: 230px;
+  overflow: hidden;
+}
